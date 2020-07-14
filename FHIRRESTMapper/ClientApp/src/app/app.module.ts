@@ -14,6 +14,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatNativeDateModule } from '@angular/material/core';
 import { MaterialModule } from './material-module';
 import { RestModelComponent } from './rest-model/rest-model.component';
+import { FileBrowseComponent } from './file-browse/file-browse.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { RestModelComponent } from './rest-model/rest-model.component';
     HomeComponent,
     CounterComponent,
     FetchDataComponent,
-    RestModelComponent
+    RestModelComponent,
+    FileBrowseComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),

@@ -1,0 +1,12 @@
+<div class="container">
+  <input type="file" style="display: none" #fileInput accept=".json, application/json" (change)="onChangeFileInput()" />
+  <button mat-raised-button color="primary" class="file-select-button" (click)="onClickFileInputButton()">
+    <mat-icon>attach_file</mat-icon>
+    Browse
+  </button>
+
+  <p class="file-name" *ngIf="!file; else fileName">Select a File</p>
+  <ng-template #fileName>
+    <p class="file-name">{{ file?.name }}</p>
+  </ng-template>
+</div>

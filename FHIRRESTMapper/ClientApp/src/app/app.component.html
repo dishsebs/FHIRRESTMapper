@@ -1,6 +1,33 @@
-<body>
+<!--<body>
   <app-nav-menu></app-nav-menu>
   <div class="container">
     <router-outlet></router-outlet>
   </div>
-</body>
+</body>-->
+
+  <div class='container-fluid'>
+    <h1>Model Mapping with FHIR and REST API</h1>
+
+    <h4>This component allow you to creating a mapping file between FHIR object and a REST API Model</h4>
+
+    <div class='row'>
+      <div class="col-sm-12 col-md-6 col-lg-6">
+        <p>Select a REST Model for Mapping</p>
+        <app-file-browse></app-file-browse>
+      </div>
+      <div class="col-sm-12 col-md-6 col-lg-6">
+        <p>Select an FHIR Object for Mapping</p>
+        <app-file-browse></app-file-browse>
+      </div>
+
+      <div class='col-sm-12 col-md-6 col-lg-6 body-content'>
+        <app-rest-model></app-rest-model>
+      </div>
+      <!--<div class='col-sm-3'>
+      <app-nav-menu></app-nav-menu>
+    </div>
+    <div class='col-sm-9 body-content'>
+      <router-outlet></router-outlet>
+    </div>-->
+    </div>
+  </div>
