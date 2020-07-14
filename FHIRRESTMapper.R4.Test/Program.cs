@@ -10,7 +10,8 @@ namespace FHIRRESTMapper.R4.Test
         {
             var ob = new ResourceHydrant(@"C:\fhir_sample_data\sample1.json");
 
-            var result=ob.GetAllResourceTypes();
+            //var result=ob.GetAllResourceTypes();
+            var result = ob.GetAllAttrubutes("Patient");
 
             foreach (var item in result)
             {
