@@ -1,0 +1,8 @@
+<mat-form-field appearance="fill">
+  <mat-label>Resource Type:</mat-label>
+  <mat-select>
+    <mat-option *ngFor="let resourceType of resourceTypes" [value]="resourceType">
+      {{resourceType}}
+    </mat-option>
+  </mat-select>
+</mat-form-field>

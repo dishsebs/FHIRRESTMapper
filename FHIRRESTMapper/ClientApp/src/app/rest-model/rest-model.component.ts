@@ -1,9 +1,10 @@
 import { SelectionModel } from '@angular/cdk/collections';
 import { FlatTreeControl } from '@angular/cdk/tree';
-import { Component, Injectable } from '@angular/core';
+import { Component, Injectable, OnInit } from '@angular/core';
 import { MatTreeFlatDataSource, MatTreeFlattener } from '@angular/material/tree';
 import { BehaviorSubject } from 'rxjs';
 import { RestApiService } from "../shared/rest-api.service";
+import { DataService } from "../shared/data.service";
 
 /**
  * Node for to-do item
@@ -26,17 +27,24 @@ export class TodoItemFlatNode {
  * If a node is a category, it has children items and new items can be added under the category.
  */
 @Injectable()
-export class ChecklistDatabase {
-  restModel : any;
+export class ChecklistDatabase implements OnInit{
+  restModel: any;
+  fileName: string;
   dataChange = new BehaviorSubject<TodoItemNode[]>([]);
 
   get data(): TodoItemNode[] { return this.dataChange.value; }
 
-  constructor(public restApi: RestApiService) {
+  constructor(public restApi: RestApiService, private fileData: DataService) {
     this.initialize();
   }
 
+  ngOnInit() {
+    this.fileData.currentFile.subscribe(fileName => this.fileName = fileName)
+    console.log('Browsed File Name ngOnInit: ' + this.fileName);
+  }
+
   async initialize() {
+    console.log('Browsed File Name initialize: ' + this.fileName);
     this.restModel = await this.restApi.getRestModel();
     const data = this.buildFileTree(this.restModel, 0);
 

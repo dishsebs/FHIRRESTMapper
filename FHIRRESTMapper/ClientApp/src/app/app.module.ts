@@ -15,6 +15,7 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MaterialModule } from './material-module';
 import { RestModelComponent } from './rest-model/rest-model.component';
 import { FileBrowseComponent } from './file-browse/file-browse.component';
+import { ResourceTypeComponent } from './resource-type/resource-type.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { FileBrowseComponent } from './file-browse/file-browse.component';
     CounterComponent,
     FetchDataComponent,
     RestModelComponent,
-    FileBrowseComponent
+    FileBrowseComponent,
+    ResourceTypeComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),

@@ -30,6 +30,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\FHIRRESTMapper.R4.Core\FHIRRESTMapper.R4.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <TypeScriptCompile Include="ClientApp\src\app\material-module.ts" />
     <TypeScriptCompile Include="ClientApp\src\app\rest-model\rest-model.component.ts" />
   </ItemGroup>
